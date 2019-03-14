@@ -13,20 +13,26 @@ Then modify the package.json file to refer to your package. Change the name, key
 
 ## Basic Git Stuff
 
-Then create a new repo up in GitHub (don't create the readme). Keep the page open so you can copy and paste the lines for add the origin and doing the push. But don't do it yet.
-First do a `git init` then do a local commit.
-You should also add a repository section to your package.json
+Then create a new repo up in GitHub (don't create the readme). Keep the page open so you can copy and paste the lines for add the origin and doing the push.  
+**But don't do it yet.**
+First do a:
+
+```bash
+git remote remove origin
+```
+
+You should also add a repository section to your package.json, although you can do this later
 
 ``` JSON
 "repository":{
       "type": "git",
     "url": "git@github.com:<userName>/<repo-name.git>"
-}
+},
 ```
 
 Now you can run the commands that github gave you for `add origin` and the push. 
 
-After those two commands are run, VScode can do push and pull and your git folder will have update its config file with the `[remote "origin"]` section.
+After those two commands are run, VScode can do push and pull and your git folder will have updated its `config` file with the `[remote "origin"]` section.
 
 Finally do an `npm install`
 to install all the packages in the package.json
