@@ -21,7 +21,7 @@ First do a:
 git remote remove origin
 ```
 
-You should also add a repository section to your package.json, although you can do this later
+You should also overwrite the repository section in your package.json to refer to have your git username and the name of your repo. You can do this later.
 
 ``` JSON
 "repository":{
