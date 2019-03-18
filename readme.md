@@ -3,25 +3,16 @@
 This is a pretty bare bones starter kit. It does have support for mocha and linting. None of the linting or testing is run automatically. While there is a .travis.yml file it doesn't have to do anything. See the alm-starter-kit (Application Life Cycle management) for a more comprehensive Continuous Deployment approach.
 
 ## First steps
-Clone this repo into your dev folder and then rename the folder basic-starter-kit to the name of your project.  
-Clone via ssh using  
-`git clone git@github.com:Rolias/basic-starter-kit.git`  
-using https  
-`git clone https://github.com/Rolias/basic-starter-kit.git`  
 
-Then modify the package.json file to refer to your package. Change the name, keywords,  and any other fields.
+There is an included bash script now named `new-app.sh` that will do the cloning, and commits. When you run that script you will be prompted for the folder where you want the cloned repo to exist. If will clone into that folder then remove the .git directory, do an init, stage all the cile and do an initial commit. 
+
+When that is done you can modify the package.json file to refer to your package. Change the name, keywords,  and any other fields. 
 
 ## Basic Git Stuff
 
 Then create a new repo up in GitHub (don't create the readme). Keep the page open so you can copy and paste the lines for add the origin and doing the push.  
-**But don't do it yet.**
-First do a:
 
-```bash
-git remote remove origin
-```
-
-You should also overwrite the repository section in your package.json to refer to have your git username and the name of your repo. You can do this later.
+Now you can back to the package.json file and overwrite the repository section to have your git username and the name of your repo. 
 
 ``` JSON
 "repository":{
@@ -29,8 +20,6 @@ You should also overwrite the repository section in your package.json to refer t
     "url": "git@github.com:<userName>/<repo-name.git>"
 },
 ```
-
-Now you can run the commands that github gave you for `add origin` and the push. 
 
 After those two commands are run, VScode can do push and pull and your git folder will have updated its `config` file with the `[remote "origin"]` section.
 
