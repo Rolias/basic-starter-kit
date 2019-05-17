@@ -13,16 +13,17 @@
   },
   "scripts": {
     "prestart": "node ./buildScripts/startMessage.js",
-    "start": "run-s start:src",
+    "start": "node $npm_package_main",
     "build": "run-p security-check start:src lint:watch test:watch",
-    "start:src": "node src/main.js",
-    "start:loop": "nodemon src/main.js",
+    "start:src": "node src/$npm_package_main",
+    "start:loop": "nodemon src/$npm_package_main",
     "security-check": "npm audit",
     "lint": "esw src src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "mocha --use_strict  main.test.js \"src/**/*.test.js\"",
+    "jsfiles": "main.test.js \"src/**/*.test.js\"",
+    "test": "mocha --use_strict  $npm_package_scripts_jsfiles",
     "test:watch": "npm run test -- --watch --reporter min ",
-    "test:cov": "nyc mocha main.test.js \"src/**/*.test.js\"",
+    "test:cov": "nyc mocha $npm_package_scripts_jsfiles",
     "watch": "run-p lint:watch test:watch",
     "doc": "./node_modules/.bin/jsdoc -c ./jsdoc.config.json src/**/*.js ./ReadMe.md"
   },
@@ -35,15 +36,15 @@
     "winston": "x"
   },
   "devDependencies": {
-    "@types/node": "^11.11.3",
+    "@types/node": "^11.11.6",
     "chai": "x",
-    "eslint": "x",
+    "eslint": "^5.15.3",
     "eslint-watch": "x",
     "jsdoc": "^3.5.5",
     "mocha": "x",
     "nodemon": "^1.18.10",
     "npm-run-all": "x",
     "nyc": "x",
-    "sinon": "x"
+    "sinon": "^7.3.0"
   }
 }
