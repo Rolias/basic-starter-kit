@@ -4,7 +4,7 @@ This is a pretty bare bones starter kit. It does have support for mocha and lint
 
 ## First steps
 
-There is an included bash script now named `new-app.sh` that will do the cloning, and commits. When you run that script you will be prompted for the folder where you want the cloned repo to exist. If will clone into that folder then remove the .git directory, do an init, stage all the cile and do an initial commit. 
+There is an included bash script now named `new-app.sh` that will do the cloning, and commits. When you run that script you will be prompted for the folder where you want the cloned repo to exist. If will clone into that folder then remove the .git directory, do an `git init`, stage all the changes and do an initial commit. 
 
 When that is done you can modify the package.json file to refer to your package. Change the name, keywords,  and any other fields. 
 
